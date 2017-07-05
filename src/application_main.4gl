@@ -723,8 +723,8 @@ FUNCTION wc_maps_demo() #Webcomponent Demo (Signature) window function (Part of 
 
     DEFINE
         f_latlng_record RECORD
-            lat FLOAT,
-            lng FLOAT
+            lat STRING,
+            lng STRING
         END RECORD,
         f_result STRING,
         f_obj util.JSONObject,
