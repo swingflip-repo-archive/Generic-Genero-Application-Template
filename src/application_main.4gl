@@ -142,7 +142,7 @@ FUNCTION initialise_app()
         CLOSE WINDOW SCREEN #Just incase
         
     #We are now initialised, we now just need to run each individual window functions...
-
+        BREAKPOINT
         IF global_config.g_enable_splash = TRUE AND global_config.g_splash_duration > 0
         THEN
             CALL run_splash_screen()
@@ -151,7 +151,9 @@ FUNCTION initialise_app()
             THEN
                 CALL login_screen() 
             ELSE
-                CALL open_application()
+                #JUMP STRAIGHT TO THE MINESWEEPER DEMO FOR THIS DEMO CASE.
+                CALL wc_minesweeper_demo()
+                #CALL open_application()
             END IF
         END IF
     
@@ -284,11 +286,11 @@ FUNCTION login_screen() #Local Login window function
     INPUT m_username, m_password, m_remember FROM username, password, remember ATTRIBUTE(UNBUFFERED)
 
         ON TIMER global_config.g_timed_checks_time
-            CALL connection_test()
+            #CALL connection_test()
             CALL timed_upload_queue_data()
         
         BEFORE INPUT
-            CALL connection_test()
+            #CALL connection_test()
             LET m_form = m_window.getForm()
             CALL DIALOG.setActionHidden("accept",1)
             CALL DIALOG.setActionHidden("cancel",1)
@@ -387,12 +389,12 @@ FUNCTION open_application() #First Application window function (Demo purposes lo
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 CALL update_connection_image("splash")
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
                 CALL update_connection_image("splash")
                 CALL generate_about()
                 DISPLAY global.g_application_about TO status
@@ -491,11 +493,11 @@ FUNCTION admin_tools() #Rough Development Tools window function (Mainly to showc
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
                 LET f_words = %"main.string.Admin_Explanation"
                 DISPLAY f_words TO words
                 IF global.g_user_type != "ADMIN"
@@ -602,11 +604,11 @@ FUNCTION interact_demo() #Interactivity Demo window function
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
                 LET f_words = %"main.string.Interact_Explanation"
                 DISPLAY f_words TO words
 

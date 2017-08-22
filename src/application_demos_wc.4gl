@@ -45,11 +45,11 @@ FUNCTION wc_signature_demo() #Webcomponent Demo (Signature) window function (Par
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
               
             ON ACTION bt_go_back
                 LET global.g_instruction = "go_back"
@@ -118,7 +118,7 @@ LABEL go_back_wc_maps_demo:
 
         #ON TIMER can cause some grief when running in an INPUT in terms of field validation. Disabled for now.
         #ON TIMER global_config.g_timed_checks_time
-           #CALL connection_test()
+           ##CALL connection_test()
             #CALL timed_upload_queue_data()
 
         BEFORE INPUT
@@ -208,11 +208,11 @@ FUNCTION wc_video_demo() #Webcomponent Demo (Signature) window function (Part of
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
               
             ON ACTION bt_go_back
                 LET global.g_instruction = "go_back"
@@ -247,7 +247,7 @@ FUNCTION wc_minesweeper_demo() #Webcomponent Demo (Minesweeper) window function 
     DEFINE
         f_level STRING,
         f_result STRING
-        
+    BREAKPOINT
     IF global.g_info.deployment_type = "GDC"
     THEN
         OPEN WINDOW w WITH FORM "wc_minesweeper"
@@ -277,11 +277,11 @@ FUNCTION wc_minesweeper_demo() #Webcomponent Demo (Minesweeper) window function 
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
 
             ON ACTION bt_new_game
                 OPEN WINDOW w2 WITH FORM "wc_minesweeper_select"

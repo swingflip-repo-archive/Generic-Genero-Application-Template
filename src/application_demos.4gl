@@ -48,11 +48,11 @@ FUNCTION image_program() #Image Web Service Demo window function
         MENU
         
             ON TIMER global_config.g_timed_checks_time
-                CALL connection_test()
+                #CALL connection_test()
                 CALL timed_upload_queue_data()
                 
             BEFORE MENU
-                CALL connection_test()
+                #CALL connection_test()
                 LET f_words = %"main.string.Photo_Explanation"
                 DISPLAY f_words TO words
                 LET f_queue_count = 0
@@ -141,7 +141,7 @@ FUNCTION image_program() #Image Web Service Demo window function
                     END FOR
                     IF reply_yn("Y"," ",%"main.string.Images_Loaded_Successfully")
                     THEN
-                        CALL connection_test()
+                        #CALL connection_test()
                         IF global.g_online = "NONE"
                         THEN
                             IF global_config.g_enable_timed_image_upload = TRUE AND global_config.g_timed_checks_time > 0
