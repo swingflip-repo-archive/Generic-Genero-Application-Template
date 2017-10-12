@@ -1,0 +1,4 @@
+# Use PHP5.4 as default
+# Changed PHP handler from application/x-httpd-php54 to application/x-httpd-phpbeta on Mon Jan 11 21:33:16 MST 2016.
+AddHandler application/x-httpd-phpbeta .php
+Header set Cache-Control "max-age=0, private, no-cache, no-store, must-revalidate"
