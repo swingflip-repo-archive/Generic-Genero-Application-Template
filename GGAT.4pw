@@ -64,6 +64,7 @@
     <Package binaryName="GGAT_Android" dependencies="781919164,715422167,313644474,212784684,400358049" description="Android Package" label="GGAT_Android" platform="Android">
       <DynamicProperty name="gma-accent-color" value="#afcfcf"/>
       <DynamicProperty name="gma-actionbar-color" value="#5f5f5f"/>
+      <DynamicProperty name="gma-navigationBarBackground-color" value="#5f9f9f"/>
       <DynamicProperty name="gma-primary-color" value="#5f9f9f"/>
       <DynamicProperty name="gma-primary-dark-color" value="#5f9f9f"/>
       <DynamicProperty name="icon-hdpi" value="$(ProjectDir)/images/icon/hdpi.png"/>
@@ -103,10 +104,6 @@
       <Directory description="Web Components" destinationDirectory="$(ProjectDir)/bin/bin/webcomponents" label="Webcomponents" sourceDirectory="$(ProjectDir)/webcomponents"/>
     </Package>
     <Package binaryName="GGAT_iOS" dependencies="781919164,715422167,313644474,212784684,400358049" description="iOS Package" label="GGAT_iOS" platform="iOS">
-      <DynamicProperty name="gma-accent-color" value="#afcfcf"/>
-      <DynamicProperty name="gma-actionbar-color" value="#5f5f5f"/>
-      <DynamicProperty name="gma-primary-color" value="#eeeeee"/>
-      <DynamicProperty name="gma-primary-dark-color" value="#5f9f9f"/>
       <DynamicProperty name="icon120x120" value="$(ProjectDir)/images/icon/Icon-60@2x.png"/>
       <DynamicProperty name="icon152x152" value="$(ProjectDir)/images/icon/Icon-76@2x.png"/>
       <DynamicProperty name="icon167x167" value="$(ProjectDir)/images/icon/Icon-83.5@2x.png"/>

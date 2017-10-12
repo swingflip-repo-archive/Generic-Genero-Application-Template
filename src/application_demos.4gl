@@ -146,12 +146,12 @@ FUNCTION image_program() #Image Web Service Demo window function
                         THEN
                             IF global_config.g_enable_timed_image_upload = TRUE AND global_config.g_timed_checks_time > 0
                             THEN
-                                CALL fgl_winmessage(%"main.string.Warning_title", %"main.string.You_Are_Offline_Auto_Retry", "information")
+                                CALL fgl_winmessage(%"main.string.Warning_Title", %"main.string.You_Are_Offline_Auto_Retry", "information")
                                 LET f_queue_count = 0
                                 INITIALIZE f_temp_img_queue TO NULL
                                 DISPLAY " " TO status 
                             ELSE
-                                CALL fgl_winmessage(%"main.string.Warning_title", %"main.string.You_Are_Offline_Try_Again", "information")
+                                CALL fgl_winmessage(%"main.string.Warning_Title", %"main.string.You_Are_Offline_Try_Again", "information")
                                 LET f_queue_count = 0
                                 INITIALIZE f_temp_img_queue TO NULL
                                 DISPLAY " " TO status
